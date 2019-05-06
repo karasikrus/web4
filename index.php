@@ -19,4 +19,29 @@ if (!$conn) {
 }
 echo "Connection was successfully established!";
 // /db
+?>
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статейки</title>
+</head>
+
+<body>
+<div class="articles">
+
+    <?php
+    $articles = $conn->query("SELECT  `title`, `content` FROM `w2s4x573ahdrmzjg`.`articles`  ORDER BY `id` DESC")
+        ->fetch_all(MYSQLI_ASSOC);
+
+    foreach ($articles as $article){
+        $title = $article["title"];
+        $content = $article["content"];
+
+        echo '<article>' . '<h2>' . $title . '</h2>' . '<p class="content">' . $content . '</p>' . '</article>';
+    }
+    ?>
+
+
+</div>
+</body>
