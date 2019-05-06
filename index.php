@@ -44,4 +44,20 @@ echo "Connection was successfully established!";
 
 
 </div>
+<div class="new-article-form">
+    <form method="post" class="article-form">
+        <input type="hidden" name="action" value="POST">
+        <label for="title">
+            Заголовок
+            <input name="title" required>
+        </label>
+        <label for="text">
+            Текст
+            <textarea name="content" required cols="50" rows="7"></textarea>
+        </label>
+        <input class="submit-button" type="submit" value="Отправить"/>
+    </form>
+
+</div>
+
 </body>
