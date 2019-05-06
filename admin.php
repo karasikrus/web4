@@ -43,6 +43,16 @@ if ($_POST) {
         } else {
             echo '<div class="error-message">Что-то пошло не так</div>';
         }
+    } elseif (isset($_POST["action"]) && $_POST["action"] == "DELETE" && isset($_POST["id"])) {
+        $id = (int)$_POST["id"];
+        $delete = $conn->query("DELETE FROM `w2s4x573ahdrmzjg`.`articles` WHERE id = " . $id);
+        if ($delete && mysqli_affected_rows($conn) > 0) {
+            echo '<div class="info-message">Удалено</div>';
+        } else {
+            echo '<div class="error-message">Что-то сломалось</div>';
+        }
+    } else {
+        echo '<div class="error-message">странно</div>';
     }
 }
 ?>
@@ -70,11 +80,11 @@ if ($_POST) {
 
     foreach ($articles as $article){
         $title = $article["title"];
-        $content = $article["content"];
+        $content = mb_substr($article["content"], 0, 30);
         $id = $article["id"];
 
 
-        echo '<article>' . '<h2>' . $title . '</h2>' . '<p class="content">' . substr($content, 0, 30)
+        echo '<article>' . '<h2>' . $title . '</h2>' . '<p class="content">' . $content
             . '</p>' . '</article>' .
             '<form method="post">' .
             '<input type="hidden" name="action" value="DELETE">' .
