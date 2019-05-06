@@ -75,8 +75,9 @@ if ($_POST) {
 <div class="articles">
 
     <?php
-    $articles = $conn->query("SELECT  `id`, `title`, `content`  FROM `w2s4x573ahdrmzjg`.`articles`  ORDER BY `id` DESC")
+    $articles = $conn->query("SELECT  `id`, `title`, `content` FROM `w2s4x573ahdrmzjg`.`articles`  ORDER BY `id` DESC")
         ->fetch_all(MYSQLI_ASSOC);
+
 
     foreach ($articles as $article){
         $title = $article["title"];
