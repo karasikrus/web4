@@ -44,6 +44,21 @@ echo "Connection was successfully established!";
 
 
 </div>
+<?php
+if ($_POST) {
+    if (isset($_POST["action"]) && $_POST["action"] == "POST" && isset($_POST["title"]) && isset($_POST["content"])) {
+        $title = mysqli_real_escape_string($conn, $_POST["title"]);
+        $content = mysqli_real_escape_string($conn, $_POST["content"]);
+        $insert = $conn->query("INSERT INTO `w2s4x573ahdrmzjg`.`articles` (`title`, `content`) VALUES (\"" . $title . "\",\"" .$content . "\")");
+        if ($insert && mysqli_affected_rows($conn) > 0) {
+            echo '<div class="success-message">Опубликовано</div>';
+        } else {
+            echo '<div class="error-message">Что-то пошло не так</div>';
+        }
+    }
+}
+?>
+
 <div class="new-article-form">
     <form method="post" class="article-form">
         <input type="hidden" name="action" value="POST">
