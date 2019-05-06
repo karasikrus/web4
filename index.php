@@ -6,6 +6,7 @@ require('databaseConnect.php');
 <head>
     <meta charset="UTF-8">
     <title>Статейки</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>

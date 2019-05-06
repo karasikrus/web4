@@ -6,6 +6,7 @@ require('databaseConnect.php');
 <head>
     <meta charset="UTF-8">
     <title>Статейки</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -40,6 +41,7 @@ if ($_POST) {
 
 <div class="new-article-form">
     <form method="post" class="article-form">
+        <div class="two-areas">
         <input type="hidden" name="action" value="POST">
         <label for="title">
             Заголовок
@@ -49,7 +51,10 @@ if ($_POST) {
             Текст
             <textarea name="content" required cols="50" rows="7"></textarea>
         </label>
+        </div>
+        <div class="button-wrapper">
         <input class="submit-button" type="submit" value="Отправить"/>
+        </div>
     </form>
 
 </div>

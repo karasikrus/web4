@@ -1,0 +1,43 @@
+textarea{
+
+margin-top: 10px;
+}
+input{
+    margin-top: 50px;
+}
+.article-form{
+
+}
+.submit-button{
+    display: inline-block;
+}
+.button-wrapper{
+    text-align: center;
+}
+label {
+    justify-content: center;
+    text-align: center;
+}
+.two-areas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+header{
+    background-color: brown;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+}
+header a{
+    color: black;
+    text-align: left;
+}
+.new-article-form{
+    background-color: white;
+    color: brown;
+}
+article h2{
+    color: brown;
+}
