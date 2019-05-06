@@ -1,5 +1,5 @@
 <?php
-echo 'e';
+
 
 // db
 $url = getenv('JAWSDB_URL');
@@ -17,7 +17,7 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connection was successfully established!";
+
 // /db
 ?>
 
@@ -75,9 +75,8 @@ if ($_POST) {
 <div class="articles">
 
     <?php
-    $articles = $conn->query("SELECT  `title`, `content`, `id` FROM `w2s4x573ahdrmzjg`.`articles`  ORDER BY `id` DESC")
+    $articles = $conn->query("SELECT  `id`, `title`, `content`  FROM `w2s4x573ahdrmzjg`.`articles`  ORDER BY `id` DESC")
         ->fetch_all(MYSQLI_ASSOC);
-    echo 'eee';
 
     foreach ($articles as $article){
         $title = $article["title"];
